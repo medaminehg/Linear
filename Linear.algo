@@ -1,0 +1,32 @@
+ALGORITHM  Linear 
+VAR
+ var tab1 , tab2 : tableaux
+ var test :BOOLEAN
+ var somme : INTEGER
+BEGIN
+    FOR i FROM 1 TO tab1.length STEP 1  DO
+    test:= true
+        FOR j FROM 1 TO tab2.length STEP 1  DO
+        IF (tab1[i]=tab2[j]) THEN
+        test:= false  
+        END_IF
+
+        END_FOR
+       IF (test=true) THEN
+           somme:= somme+tab1[i]
+       END_IF
+    END_FOR
+    FOR i FROM 1 TO tab2.length STEP 1  DO
+    test:= true
+        FOR j FROM 1 TO tab1.length STEP 1  DO
+        IF (tab2[i]=tab3[j]) THEN
+        test:= false  
+        END_IF
+
+        END_FOR
+       IF (test=true) THEN
+           somme:= somme+tab2[i]
+       END_IF
+    END_FOR
+    write ("somme est", somme)
+END

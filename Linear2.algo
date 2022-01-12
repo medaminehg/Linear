@@ -1,0 +1,31 @@
+ALGORITHM Linear-2
+VAR
+     ha-tab:HASH_TABLE<INTEGER,INTEGER>
+    tab1,tab2:tableaux
+    con,somme: INTEGER
+BEGIN
+    con:= 1
+    FOR i FROM 1 TO tab1.length STEP 1  DO
+      ha-tab:=<tab1[i],con>  
+    
+    END_FOR
+    FOR i FROM 1 TO tab2.length STEP 1  DO
+    IF (ha-tab.lookup == true) THEN
+      ha-tab:=<tab2[i],con+1>  
+    ELSE
+      ha-tab:=<tab2[i],con>  
+    END_IF
+    
+
+    END_FOR
+
+    FOR i FROM 1 TO ha-tab STEP 1  DO
+    IF (ha-tab[i].value ==1) THEN
+      somme+= ha-tab[i]
+    END_IF
+      
+    END_FOR
+    write ("le somme est ", somme)
+
+
+END
